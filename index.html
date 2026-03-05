@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Servicios Jurídicos - Marín Ortega Consultores Jurídicos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --navy: #1a2744;
+            --navy-light: #2a3f6a;
+            --gold: #c9a84c;
+            --gold-light: #e0c97a;
+            --cream: #faf8f2;
+            --gray: #6b7280;
+            --light-gray: #f1f3f5;
+            --text: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Futura', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: #ffffff;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 50px 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .logo-section h1 {
+            font-family: 'Montserrat', 'Futura', sans-serif;
+            font-weight: 800;
+            font-size: 28px;
+            color: #ffffff;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+
+        .logo-section h1 span {
+            display: block;
+            font-weight: 300;
+            font-size: 26px;
+            letter-spacing: 10px;
+            margin-top: -2px;
+        }
+
+        .logo-section .tagline {
+            font-family: 'Montserrat', 'Futura', sans-serif;
+            font-size: 9px;
+            color: var(--gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .header-info {
+            text-align: right;
+            color: rgba(255,255,255,0.85);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .header-info a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        /* DATE & ADDRESSEE */
+        .meta-section {
+            padding: 40px 0 10px;
+        }
+
+        .date {
+            font-size: 13px;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .addressee {
+            margin-top: 25px;
+        }
+
+        .addressee p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .addressee .name {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 15px;
+        }
+
+        /* SUBJECT LINE */
+        .subject {
+            margin: 30px 0;
+            padding: 18px 25px;
+            background: var(--cream);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .subject p {
+            font-size: 13px;
+            color: var(--navy);
+        }
+
+        .subject strong {
+            font-weight: 700;
+        }
+
+        /* GREETING */
+        .greeting {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .intro {
+            font-size: 14px;
+            margin-bottom: 35px;
+            text-align: justify;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .section-number {
+            background: var(--navy);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 14px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', 'Futura', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-body {
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .section-body p {
+            margin-bottom: 14px;
+        }
+
+        /* SUBSECTIONS */
+        .subsection {
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 2px solid var(--gold-light);
+        }
+
+        .subsection-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 10px;
+            padding: 30px 35px;
+            margin: 30px 0;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: rgba(201, 168, 76, 0.1);
+            border-radius: 50%;
+            transform: translate(30px, -30px);
+        }
+
+        .highlight-box .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold-light);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box .amount {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .highlight-box .amount-note {
+            font-size: 13px;
+            margin-top: 6px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* TEAM TABLE */
+        .team-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .team-table thead th {
+            background: var(--navy);
+            color: #ffffff;
+            padding: 12px 20px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .team-table thead th:first-child {
+            border-radius: 6px 0 0 0;
+        }
+
+        .team-table thead th:last-child {
+            border-radius: 0 6px 0 0;
+        }
+
+        .team-table tbody td {
+            padding: 12px 20px;
+            font-size: 13px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .team-table tbody tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        .team-table tbody tr:last-child td:first-child {
+            border-radius: 0 0 0 6px;
+        }
+
+        .team-table tbody tr:last-child td:last-child {
+            border-radius: 0 0 6px 0;
+        }
+
+        /* PROCESS STEPS */
+        .process-timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold), var(--navy));
+        }
+
+        .process-step {
+            position: relative;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px var(--gold);
+        }
+
+        .process-step .step-title {
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .process-step .step-desc {
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* DIVIDER */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 35px 0;
+        }
+
+        /* SIGNATURE */
+        .signature-section {
+            margin: 40px 0 30px;
+        }
+
+        .signature-block {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 25px;
+        }
+
+        .signer {
+            text-align: center;
+            flex: 1;
+        }
+
+        .signer .line {
+            border-top: 1px solid var(--navy);
+            width: 200px;
+            margin: 0 auto 8px;
+        }
+
+        .signer .signer-name {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--navy);
+        }
+
+        .signer .signer-role {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--navy);
+            padding: 20px 60px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            body { background: #fff; }
+            .header { break-after: avoid; }
+            .section { break-inside: avoid; }
+            .highlight-box { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="https://i.ibb.co/YTJKg8Kv/Mari-n-Ortega-Consultores-Juri-dicos-06-25-4.png" alt="Marín Ortega Consultores Jurídicos" style="height: 70px; width: auto;">
+            </div>
+            <div class="header-info">
+                Calle 98 #22-64, Oficina 512<br>
+                Bogotá D.C., Colombia<br>
+                <a href="https://marinortega.com">marinortega.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container">
+
+        <!-- DATE & ADDRESSEE -->
+        <div class="meta-section">
+            <p class="date">Bogotá D.C., 5 de marzo de 2026</p>
+
+            <div class="addressee">
+                <p>Señora</p>
+                <p class="name">SALLY KATHERIN NAVAS OVALLES</p>
+                <p>Directora y Secretaria de Sounds Good S.A.</p>
+                <p>Ciudad.</p>
+            </div>
+        </div>
+
+        <!-- SUBJECT -->
+        <div class="subject">
+            <p><strong>Asunto:</strong> Propuesta de servicios jurídicos para la presentación de denuncia penal por los delitos de <strong>Injuria</strong> y <strong>Calumnia</strong> en contra del señor Carlos Alberto Gutiérrez Beleño.</p>
+        </div>
+
+        <!-- GREETING -->
+        <p class="greeting">Estimada Sally:</p>
+
+        <p class="intro">
+            De conformidad con su amable solicitud, nos permitimos presentarle una propuesta de servicios jurídicos en relación con la asistencia que Marín Ortega Consultores Jurídicos puede prestarle para la proyección y presentación de una denuncia penal en contra del señor <strong>Carlos Alberto Gutiérrez Beleño</strong>, identificado con cédula de ciudadanía No. 1.140.818.084, por la presunta comisión de los delitos de <strong>Injuria</strong> (Artículo 220 del Código Penal) y <strong>Calumnia</strong> (Artículo 221 del Código Penal), con fundamento en las manifestaciones deshonrosas y las imputaciones falsas de conductas delictivas realizadas por dicho señor en contra de usted y de la sociedad Sounds Good S.A.
+        </p>
+
+        <!-- I. DECLARACIONES GENERALES -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">I</div>
+                <div class="section-title">Declaraciones Generales</div>
+            </div>
+            <div class="section-body">
+                <p>Por medio de la presente propuesta confirmamos el interés y la intención de Marín Ortega Consultores Jurídicos S.A.S. (en adelante "MO" o la "Firma") en prestar sus servicios y en llevar a cabo las actividades que usted busca sean ejecutadas.</p>
+                <p>Igualmente, por medio de la presente, confirmamos que MO <em>(i)</em> no tiene conflicto de intereses con relación a los servicios que serían ejecutados y que están descritos en la presente propuesta de servicios, <em>(ii)</em> se compromete a mantener esta propuesta y su contenido bajo estricta confidencialidad, y <em>(iii)</em> cuenta con la experiencia y las capacidades para prestar los servicios solicitados.</p>
+            </div>
+        </div>
+
+        <!-- II. ALCANCE DE LOS SERVICIOS -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">II</div>
+                <div class="section-title">Alcance de los Servicios</div>
+            </div>
+            <div class="section-body">
+                <p>Con base en la información y documentación compartida por usted, así como en la revisión de los mensajes de WhatsApp, correos electrónicos, publicaciones y demás evidencia documental relacionada con las manifestaciones realizadas por el señor Carlos Alberto Gutiérrez Beleño, el alcance de los servicios que puede prestarle Marín Ortega son los siguientes:</p>
+
+                <div class="subsection">
+                    <p class="subsection-title">2.1. Proyección y presentación de denuncia penal por Injuria y Calumnia.</p>
+                    <p>MO proyectará y presentará ante la Fiscalía General de la Nación, concretamente ante la Oficina de Asignaciones, una denuncia penal en contra del señor Carlos Alberto Gutiérrez Beleño por la presunta comisión de los delitos de Injuria (Art. 220 C.P.) y Calumnia (Art. 221 C.P.), derivados de las manifestaciones deshonrosas que ha realizado en contra de usted y de la sociedad Sounds Good S.A.</p>
+                    <p>En concreto, la denuncia se fundamentará en que el señor Gutiérrez Beleño ha realizado, entre otras, las siguientes conductas: <em>(i)</em> manifestaciones injuriosas a través de mensajes de WhatsApp de contenido amenazante y deshonroso, <em>(ii)</em> publicaciones en redes sociales y plataformas digitales en las que afirma falsamente que Sounds Good S.A. "se robó información sensible" de su compañía Yellowseed, atribuyendo la comisión de conductas delictivas sin sustento probatorio alguno, y <em>(iii)</em> el incumplimiento deliberado del Acuerdo de Transacción suscrito el 8 de noviembre de 2025, cuya cláusula III.4 establece expresamente la obligación de las partes de abstenerse de difamar o pronunciarse negativamente respecto de los miembros de la otra parte.</p>
+                </div>
+
+                <div class="subsection">
+                    <p class="subsection-title">2.2. Finalidad estratégica de la denuncia.</p>
+                    <p>Resulta pertinente señalar que la finalidad principal de la interposición de la denuncia penal no radica en lograr una condena privativa de la libertad del señor Gutiérrez Beleño, sino en activar los mecanismos que el ordenamiento jurídico colombiano pone a disposición de las víctimas para que, a través de la acción penal, se disuada al denunciado de continuar con las conductas lesivas contra la honra y el buen nombre de nuestra cliente y de la sociedad Sounds Good S.A. La denuncia busca, fundamentalmente, que el señor Gutiérrez Beleño cese de manera inmediata y definitiva las manifestaciones deshonrosas y las imputaciones falsas que viene realizando.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- III. EL PROCESO PENAL EN COLOMBIA -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">III</div>
+                <div class="section-title">El Proceso Penal en Colombia</div>
+            </div>
+            <div class="section-body">
+                <p>A efectos de que usted cuente con un panorama claro sobre el trámite que seguirá la denuncia una vez radicada, nos permitimos explicar de manera general las etapas del proceso penal colombiano regulado por la Ley 906 de 2004:</p>
+
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="step-title">Presentación de la denuncia e inicio de la investigación</div>
+                        <div class="step-desc">La Fiscalía General de la Nación, como órgano titular del ejercicio de la acción penal, investigará los hechos denunciados. Esta investigación puede iniciar por denuncia de la víctima, como sería en este caso, por denuncia de un tercero o de oficio. En la primera etapa de la investigación, la Fiscalía buscará y recogerá toda la información que permita identificar a los presuntos responsables y establecer las circunstancias de la conducta.</div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-title">Formulación de imputación</div>
+                        <div class="step-desc">Una vez la Fiscalía cuente con suficiente información, se procederá con la audiencia de formulación de imputación, en la cual la Fiscalía comunica al señor Gutiérrez Beleño que está siendo investigado por la comisión de una conducta delictiva y se le vincula formalmente al proceso. Desde este momento, el imputado cuenta con todas las garantías procesales.</div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-title">Formulación de acusación</div>
+                        <div class="step-desc">Cuando la Fiscalía cuente con material probatorio suficiente, formulará acusación mediante un escrito que contiene el marco fáctico (los hechos) y el marco jurídico del proceso. Esta audiencia marca el inicio de la etapa de juicio oral y en ella se realiza el descubrimiento probatorio por parte de la Fiscalía.</div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-title">Audiencia preparatoria</div>
+                        <div class="step-desc">La defensa tendrá un término de sesenta (60) días para recaudar sus pruebas. Posteriormente, el juez de conocimiento cita a audiencia preparatoria, en la cual la defensa hará su descubrimiento, las partes realizarán solicitudes probatorias, se podrán estipular algunos hechos y oponerse a las pruebas de la contraparte. El juez decretará las pruebas mediante auto.</div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-title">Juicio oral y sentencia</div>
+                        <div class="step-desc">Finalmente, en la audiencia de juicio oral se lleva a cabo el debate probatorio entre las partes. La Fiscalía buscará la condena del acusado más allá de toda duda razonable. Una vez agotada esta etapa, el juez dará el sentido del fallo y leerá la sentencia, la cual es susceptible de recursos. Es importante destacar que, en muchas ocasiones, antes de llegar a sentencia, el imputado puede optar por mecanismos alternativos o conciliatorios que resuelvan la situación de manera anticipada.</div>
+                    </div>
+                </div>
+
+                <p>Es importante resaltar que, conforme a la estrategia planteada, el objetivo primordial de la denuncia es generar la activación del aparato investigativo del Estado como mecanismo de presión legítimo para que el señor Gutiérrez Beleño desista de las conductas descritas. La sola formulación de imputación y el sometimiento a un proceso penal suelen ser suficientes para lograr este propósito.</p>
+            </div>
+        </div>
+
+        <!-- IV. EQUIPO DE TRABAJO -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">IV</div>
+                <div class="section-title">Equipo de Trabajo</div>
+            </div>
+            <div class="section-body">
+                <p>El equipo de abogados estará conformado, principalmente, por las siguientes personas, las cuales serán dirigidas y coordinadas por Nicolás Marín Muñoz:</p>
+
+                <table class="team-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cargo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nicolás Marín Muñoz</td>
+                            <td>Socio</td>
+                        </tr>
+                        <tr>
+                            <td>Germán Andrés Ortega Ochoa</td>
+                            <td>Socio</td>
+                        </tr>
+                        <tr>
+                            <td>Felipe Fajardo Valenzuela</td>
+                            <td>Asociado Director</td>
+                        </tr>
+                        <tr>
+                            <td>Simón Pava Correal</td>
+                            <td>Paralegal</td>
+                        </tr>
+                        <tr>
+                            <td>Juan José Ortiz</td>
+                            <td>Paralegal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- V. PROPUESTA ECONÓMICA -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">V</div>
+                <div class="section-title">Propuesta Económica</div>
+            </div>
+            <div class="section-body">
+                <p>El valor de los honorarios de Marín Ortega Consultores Jurídicos por los servicios profesionales descritos en la presente propuesta será el siguiente:</p>
+
+                <div class="highlight-box">
+                    <div class="label">Honorarios profesionales</div>
+                    <div class="amount">$5.500.000 COP</div>
+                    <div class="amount-note">Cinco millones quinientos mil pesos colombianos M/Cte. — IVA incluido, pagaderos con la aceptación de la propuesta.</div>
+                </div>
+
+                <p>Este valor comprende la proyección y presentación de la denuncia penal ante la Oficina de Asignaciones de la Fiscalía General de la Nación. La representación de víctima en etapas procesales posteriores a la presentación de la denuncia no se encuentra incluida en la presente propuesta y será objeto de una propuesta independiente en caso de ser requerida.</p>
+            </div>
+        </div>
+
+        <!-- VI. GASTOS -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">VI</div>
+                <div class="section-title">Gastos</div>
+            </div>
+            <div class="section-body">
+                <p>Todos los gastos en que incurra MO en desarrollo de los servicios profesionales objeto de la presente propuesta, incluyendo, sin limitarse a estos, pasajes aéreos, manutención, alojamiento, transporte, gastos notariales, obtención de copias documentales y gastos procesales (cuando a ello haya lugar), serán por cuenta y cargo exclusivamente del Cliente y serán facturados y reembolsados. Sin embargo, en los casos en que MO lo considere conveniente, bien por el monto del gasto o por cualquier otra circunstancia justificada, se podrá manejar bajo la modalidad de anticipos.</p>
+            </div>
+        </div>
+
+        <!-- VII. IMPUESTOS -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">VII</div>
+                <div class="section-title">Impuestos</div>
+            </div>
+            <div class="section-body">
+                <p>El ofrecimiento económico de la presente propuesta comprende todos los impuestos que son de cargo exclusivo de MO. Por consiguiente, los términos económicos de esta oferta no incluyen los impuestos que por expresa disposición legal puedan corresponder a los Clientes.</p>
+                <p>Por ello, ninguno de los montos señalados en esta propuesta por concepto de honorarios profesionales incluye el impuesto sobre las ventas (IVA). En consecuencia, es necesario agregar en cada caso el monto correspondiente a este tributo a la tarifa que se encuentre vigente en el momento de expedición de las facturas, que en la actualidad es de diecinueve por ciento (19%).</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="intro">
+            Tendremos el mayor gusto en aclarar cualquier duda que se pueda presentar o en contestar cualquier pregunta que pueda surgir en relación con la presente oferta. Agradecemos su consideración y esperamos trabajar con usted muy pronto.
+        </p>
+
+        <p class="greeting">Muy atentamente,</p>
+        <p class="greeting" style="margin-top: 8px; font-weight: 700; color: var(--navy);">Marín Ortega Consultores Jurídicos S.A.S.</p>
+
+        <!-- SIGNATURES -->
+        <div class="signature-section">
+            <div class="signature-block">
+                <div class="signer">
+                    <div class="line"></div>
+                    <p class="signer-name">Nicolás Marín Muñoz</p>
+                    <p class="signer-role">Socio Director</p>
+                </div>
+                <div class="signer">
+                    <div class="line"></div>
+                    <p class="signer-name">Germán Andrés Ortega Ochoa</p>
+                    <p class="signer-role">Socio Director</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-content">
+            <span>Calle 98 #22-64, Oficina 512 — Bogotá D.C.</span>
+            <a href="https://marinortega.com">marinortega.com</a>
+        </div>
+    </div>
+
+</body>
+</html>
